@@ -18,7 +18,7 @@
 }
 
 .styled-table thead tr {
-    background-color: #3336ff;
+    background-color: #d9534f;
     color: #ffffff;
     text-align: left;
 }
@@ -37,7 +37,7 @@
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #3336ff;
+    border-bottom: 2px solid #d9534f;
 }
 
 .styled-table tbody tr.active-row {
@@ -272,6 +272,7 @@
 <div class="tab">
   <button class="tablinks" onclick="openPage(event, 'scrapepage')" id="defaultOpen">Crawler</button>
   <button class="tablinks" onclick="openPage(event, 'sentiment')">Sentiment analysis</button>
+  <img src="{{ url_for('upload', filename='KC-logo.png') }}" />
 </div>
 <script>
 document.getElementById("defaultOpen").click();
@@ -287,9 +288,9 @@ document.getElementById("defaultOpen").click();
 	  <option value="amazon">amazon</option>
 	  <option value="shopee">Shopee</option>
 	</select>
-    <input type="submit" value="Get Reviews" class="btn btn-primary" onclick="scrape()">
+    <input type="submit" value="Get Reviews" class="btn btn-danger" onclick="scrape()">
 </div>
-<input type="submit" value="Refresh" class="btn btn-primary" onclick="getReviewFiles()">
+<input type="submit" value="Refresh" class="btn btn-danger" onclick="getReviewFiles()">
 <div id="review-files">
 </div>
 </div>
@@ -302,7 +303,7 @@ document.getElementById("defaultOpen").click();
     <label for="review-text">Enter Review</label><br>
     <textarea id="review" name="review-text" placeholder="Enter Review" cols="50" rows="10"> </textarea>
     <br><br>
-    <input type="submit" value="Get sentiment" class="btn btn-primary" onclick="getPrediction()">
+    <input type="submit" value="Get sentiment" class="btn btn-danger" onclick="getPrediction()">
 </div>
 
 <div>
@@ -312,7 +313,7 @@ document.getElementById("defaultOpen").click();
   <form action="" method="POST" enctype="multipart/form-data">
     <input type="file" id="myfile" name="file" required="required">
     <br><br>
-    <input type="submit" value="submit" class="btn btn-primary">
+    <input type="submit" value="submit" class="btn btn-danger">
   </form>
 </div>
 <script type="text/javascript">

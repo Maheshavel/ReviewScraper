@@ -32,6 +32,7 @@ app = Flask(__name__)
 
 app.config['FILEPATH']='results'
 app.config['UPLOAD_PATH'] = 'uploads'
+app.config['STATIC_PATH'] = 'uploads'
 
 @app.errorhandler(404)
 def resource_not_found(exception):
@@ -261,7 +262,12 @@ def upload_files():
 @app.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_PATH'], filename)
-	
+    
+"""    
+@app.route('/static/<filename>')
+def upload(filename):
+    return send_from_directory(app.config['STATIC_PATH'], filename)
+"""	
 	
 # Function to get the current time
 
